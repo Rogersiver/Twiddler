@@ -52,7 +52,9 @@ $('#registerbut').click(function(){
 //Update $tweets based on whosTimeline
 function update(){
   if(whosTimeline === visitor){
-    $tweets = streams.home.reverse().map((tweet) => {
+    $tweets = streams.home.sort(function(x,y){
+      x.created_at - y.created_at;
+     }).map((tweet) => {
     if(visitor === tweet.user){
   const $tweet = $('<div></div>').attr('class', 'tweetcon');
   const $user = $('<p></p>')
@@ -69,10 +71,12 @@ function update(){
   $tweet.append($timestamp)
   return $tweet;
     }
-  })
+  }).reverse();
   }
-  if(whosTimeline !== null){
-    $tweets = streams.home.slice(0).reverse().map((tweet) => {
+  if(whosTimeline !== 'none' && whosTimeline !== visitor){
+    $tweets = streams.home.sort(function(x,y){
+      x.created_at - y.created_at;
+     }).map((tweet) => {
       if(whosTimeline === tweet.user){
   const $tweet = $('<div></div>').attr('class', 'tweetcon');
   const $user = $('<p></p>')
@@ -89,10 +93,12 @@ function update(){
   $tweet.append($timestamp)
   return $tweet;
       }
-    });
+    }).reverse();
   }
 if(whosTimeline === 'none'){
-  $tweets = streams.home.slice(0).reverse().map((tweet) => {
+  $tweets = streams.home.sort(function(x,y){
+    x.created_at - y.created_at;
+   }).map((tweet) => {
   const $tweet = $('<div></div>').attr('class', 'tweetcon');
   const $user = $('<p></p>')
     .attr('class', 'tweet-user')
@@ -108,20 +114,19 @@ if(whosTimeline === 'none'){
   $tweet.append($timestamp)
   return $tweet;
 
-}).slice(0, 7);
+}).reverse().slice(0, 7);
 }
 }
-$("#tweeterinput").on("keydown",function search(e) {
-  if(e.keyCode == 13) {
-    $message = $('#tweeterinput').val()
-    writeTweet($message);
-    console.log(streams.home);
-    $('#tweeterinput').val("")
-    update()
-    updateList($tweets);
-  }
+$("input").on("keydown",function search(e) {
+    if(e.keyCode == 13) {
+      $message = $('#tweeterinput').val()
+      writeTweet($message);
+      console.log(streams.home);
+      $('#tweeterinput').val("")
+      update()
+      updateList($tweets);
+    }
 });
-
   //updates list on html page
 function updateList(updatedList){
     $('#timeline-list').empty();
