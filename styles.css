@@ -1,0 +1,136 @@
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#logo {
+  width: 100%;
+}
+
+#underneath-overlay-container {
+  max-width: 500px;
+  filter: blur(10px);
+  margin:auto;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+#name-input{
+  background-color: #F9C74F;
+  box-shadow: 7px 5px 1px #f3722c;
+}
+
+#header-username {
+  position: fixed;
+  color:rgb(245, 248, 250);
+  background-color: #F3722C;
+  border-radius: 10px;
+  padding: 5px;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  z-index: 1;
+}
+
+#posttweetcon {
+  width: 100%;
+  display: inline-flex;
+  padding: 10px;
+}
+
+#tweeterbut {
+  width: 30%;
+  border-radius: 20px;
+  background-color: #90BE6D;
+  box-shadow: 5px 10px 1px #43AA8B;
+}
+
+#registerbut {
+  width: 70%;
+  border-radius: 10px;
+  height: 100%;
+  margin-top: 10px;
+  display: auto;
+  background-color: #90BE6D;
+  box-shadow: 7px 5px 1px #43AA8B;
+}
+
+#updaterbut {
+  text-align: center;
+  width: 30%;
+  border-radius: 20px;
+  display: none;
+  box-shadow: 5px 10px 1px #43AA8B;
+}
+
+#tweeterinput {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 100px;
+  background-color: #F9C74F;
+  color: #577590;
+  box-shadow: 5px 10px 1px #43AA8B;
+}
+
+#welcome {
+  color: #F9C74F;
+}
+
+::placeholder {
+    color: #577590;
+}
+
+#main-overlay {
+  position: absolute;
+  background-color: #f3722c;
+  padding: 50px;
+  border-radius: 50px;
+  z-index: 1;
+  box-shadow: 5px 10px 1px #43AA8B;
+}
+
+.containerelement {
+  background-color: #90BE6D;
+}
+
+
+.tweetcon{
+  padding: 0;
+  border: 2px solid #f94144;
+  background-color: #F9C74F;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 5px 10px 1px #43AA8B;
+}
+
+
+.tweet-message {
+  font-family: 'PT Serif', serif;
+  padding-left: 5%;
+  color: #577590
+}
+
+.tweet-user {
+  padding: 5px;
+  text-align: center;
+  border: 2px solid #F9C74F;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: #F9C74F;
+  background-color: #577590;
+}
+
+.tweet-timest {
+  font-size: x-small;
+  font-family: 'PT Serif', serif;
+  color: #F3722C;
+  margin:inherit;
+}
+
+#timeline-list {
+  padding: 0;
+}
+
