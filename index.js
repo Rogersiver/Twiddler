@@ -111,6 +111,16 @@ if(whosTimeline === 'none'){
 }).slice(0, 7);
 }
 }
+$("#tweeterinput").on("keydown",function search(e) {
+  if(e.keyCode == 13) {
+    $message = $('#tweeterinput').val()
+    writeTweet($message);
+    console.log(streams.home);
+    $('#tweeterinput').val("")
+    update()
+    updateList($tweets);
+  }
+});
 
   //updates list on html page
 function updateList(updatedList){
@@ -128,6 +138,8 @@ function updateList(updatedList){
     update()
     updateList($tweets);
   });
+
+
 
 //when this tweet-user is clicked...
 $(document).on("click", ".tweet-user", (function(){
