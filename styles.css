@@ -12,7 +12,7 @@
 
 #underneath-overlay-container {
   max-width: 500px;
-  filter: blur(10px);
+  filter: blur(20px) hue-rotate(360deg);
   margin:auto;
   -webkit-user-select: none;
   pointer-events: none;
@@ -76,7 +76,7 @@
 }
 
 #welcome {
-  color: #F9C74F;
+  color: darkslategray;
 }
 
 ::placeholder {
@@ -85,16 +85,19 @@
 
 #main-overlay {
   position: absolute;
-  background-color: #f3722c;
+  background-color: whitesmoke;
+  background-blend-mode:screen;
   padding: 50px;
   border-radius: 50px;
   z-index: 1;
   box-shadow: 5px 10px 1px #43AA8B;
 }
 
-.containerelement {
-  background-color: #90BE6D;
-}
+
+
+
+
+
 
 
 .tweetcon{
@@ -103,7 +106,6 @@
   background-color: #F9C74F;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 5px 10px 1px #43AA8B;
 }
 
 

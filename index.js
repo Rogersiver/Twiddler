@@ -14,7 +14,7 @@ $('#registerbut').click(function(){
  visitor = $visitor
  $('#header-username').text($visitor);
  $('#underneath-overlay-container')
- .css('filter', 'blur(0px)')
+ .css('filter', 'blur(0px) hue-rotate(0deg)')
  .css('transition', '2s')
  .css('-webkit-user-select', 'auto')
  .css('pointer-events', 'auto')
