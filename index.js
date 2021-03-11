@@ -3,7 +3,7 @@ $(document).ready(() => {
   visitor = null;
   var whosTimeline = 'none';
 
-  const $body = $('body').css('background-color', '#90BE6D');
+  const $body = $('body');
   //$body.html(''); weird init thing
 
   //when the register button is clicked...
@@ -14,10 +14,11 @@ $('#registerbut').click(function(){
  visitor = $visitor
  $('#header-username').text($visitor);
  $('#underneath-overlay-container')
- .css('filter', 'blur(0px) hue-rotate(0deg)')
+ .css('filter', 'blur(0px) grayscale(0%)')
  .css('transition', '2s')
  .css('-webkit-user-select', 'auto')
  .css('pointer-events', 'auto')
+ $body.css('filter', 'greyscale(0%)') .css('transition', '2s')
  $('#main-overlay').fadeOut(2000);
  streams.users[$visitor] = [];
  console.log(`You're Registered! your username is ${visitor}`)

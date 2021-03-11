@@ -12,11 +12,13 @@
 
 #underneath-overlay-container {
   max-width: 500px;
-  filter: blur(20px) hue-rotate(360deg);
+  filter: blur(20px) grayscale(100%);
   margin:auto;
   -webkit-user-select: none;
   pointer-events: none;
 }
+
+
 
 #name-input{
   background-color: #F9C74F;
@@ -74,6 +76,8 @@
   color: #577590;
   box-shadow: 5px 10px 1px #43AA8B;
 }
+
+
 
 #welcome {
   color: darkslategray;
