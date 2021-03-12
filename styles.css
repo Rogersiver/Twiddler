@@ -19,6 +19,10 @@
   box-shadow: 7px 10px 1px #43AA8B;
 }
 
+#logo:hover {
+  color: #fbdc93;
+}
+
 #underneath-overlay-container {
   max-width: 500px;
   filter: blur(20px) grayscale(100%);
@@ -45,6 +49,10 @@
   box-shadow: 7px 5px 1px #f94144;
 }
 
+#header-username:hover {
+  color: #fbdc93;
+}
+
 #posttweetcon {
   width: 100%;
   display: inline-flex;
@@ -56,9 +64,15 @@
   border-radius:20px;
   background-color: #90BE6D;
   box-shadow: 5px 10px 1px #43AA8B;
+  color: rgb(245, 248, 250);
+}
+
+#tweeterbut:hover {
+  color: #fbdc93;
 }
 
 #registerbut {
+  color: rgb(245, 248, 250);
   width: 70%;
   border-radius: 10px;
   height: 100%;
@@ -66,6 +80,10 @@
   display: auto;
   background-color: #90BE6D;
   box-shadow: 7px 5px 1px #43AA8B;
+}
+
+#registerbut:hover {
+  color: #fbdc93
 }
 
 #updaterbut {
@@ -105,13 +123,6 @@
   box-shadow: 5px 10px 1px #43AA8B;
 }
 
-
-
-
-
-
-
-
 .tweetcon{
   border: 4px solid #F9C74F;
   background-color: #F9C74F;
@@ -138,6 +149,9 @@
   background-color: #90BE6D;
 }
 
+.tweet-user:hover {
+  color: #ffdf95;
+}
 .tweet-timest {
   font-size: x-small;
   border-radius: 10px;
@@ -155,7 +169,7 @@
 .hashtag {
   cursor: pointer;
   color: #43AA8B;
-  
+
 }
 .hashtag:hover {
   color: #e5ffd0;
