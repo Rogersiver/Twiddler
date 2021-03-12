@@ -1,24 +1,25 @@
 
 $(document).ready(() => {
+  //init visitor
   visitor = null;
+  //init whosTimeline
   var whosTimeline = 'none';
-
+//bring body into js as element
   const $body = $('body');
   //$body.html(''); weird init thing
 
-  //when the register button is clicked...
+  /*when the register button is clicked set visitor, make cosmetic changes,
+  console registered! statement */
 $('#registerbut').click(function(){
-
-  //get username input and add to usernames/set to window visitor
  const $visitor = $('#name-input').val()
  visitor = $visitor
  $('#header-username').text($visitor);
  $('#underneath-overlay-container')
  .css('filter', 'blur(0px) grayscale(0%)')
- .css('transition', '2s')
+ .css('transition', '1s')
  .css('-webkit-user-select', 'auto')
  .css('pointer-events', 'auto')
- $body.css('filter', 'greyscale(0%)') .css('transition', '2s')
+ $body.css('filter', 'greyscale(0%)') .css('transition', '1s')
  $('#main-overlay').fadeOut(2000);
  streams.users[$visitor] = [];
  console.log(`You're Registered! your username is ${visitor}`)
@@ -32,7 +33,7 @@ $('#registerbut').click(function(){
     const $user = $('<p></p>')
       .attr('class', 'tweet-user')
       .text(`@${tweet.user}:`);
-
+//look for hashtags and wrap them in tag
     const $message = $('<p></p>')
       .attr('class', "tweet-message")
       .text(`${tweet.message}`);
@@ -47,15 +48,22 @@ $('#registerbut').click(function(){
 
   }).slice(0,7);
 
+
+
   $('#timeline-list').prepend($tweets);
 
-
+  $(".tweet-message:contains('#')").html(function(_, html) {
+    return html.replace(/(#[a-z][^\s]+)/g, '<p class="hashtag">$1</p>');
+ });
 //Update $tweets based on whosTimeline
 function update(){
+
+  //if whosTimeline is the visitor
   if(whosTimeline === visitor){
     $tweets = streams.home.sort(function(x,y){
       x.created_at - y.created_at;
      }).map((tweet) => {
+       //conditional filtering for tweet.user
     if(visitor === tweet.user){
   const $tweet = $('<div></div>').attr('class', 'tweetcon');
   const $user = $('<p></p>')
@@ -74,6 +82,7 @@ function update(){
     }
   }).reverse();
   }
+  //if we are not homepage as well as not on our timeline were on a user timeline
   if(whosTimeline !== 'none' && whosTimeline !== visitor){
     $tweets = streams.home.sort(function(x,y){
       x.created_at - y.created_at;
@@ -96,6 +105,7 @@ function update(){
       }
     }).reverse();
   }
+  //if were homepage
 if(whosTimeline === 'none'){
   $tweets = streams.home.sort(function(x,y){
     x.created_at - y.created_at;
@@ -118,7 +128,10 @@ if(whosTimeline === 'none'){
 }).reverse().slice(0, 7);
 }
 }
+
+//makes enter send tweet after registration
 $("input").on("keydown",function search(e) {
+  if(visitor){
     if(e.keyCode == 13) {
       $message = $('#tweeterinput').val()
       writeTweet($message);
@@ -127,7 +140,9 @@ $("input").on("keydown",function search(e) {
       update()
       updateList($tweets);
     }
+  }
 });
+
   //updates list on html page
 function updateList(updatedList){
     $('#timeline-list').empty();
@@ -138,10 +153,13 @@ function updateList(updatedList){
   $('#tweeterbut').click(function(){
     //get the message out of the textarea
     $message = $('#tweeterinput').val()
+    //format it as a tweet
     writeTweet($message);
-    console.log(streams.home);
+    //clear out the input
     $('#tweeterinput').val("")
+    //update $tweets in DOM
     update()
+    //update list on page
     updateList($tweets);
   });
 
@@ -150,7 +168,6 @@ function updateList(updatedList){
 //when this tweet-user is clicked...
 $(document).on("click", ".tweet-user", (function(){
   whosTimeline = $(this).html().slice(1).slice(0, -1);
-  update();
   updateList($tweets);
 }))
 
@@ -170,19 +187,19 @@ $(document).on("click", "#logo", (function(){
 
 
   //button method
-// $('#updaterbut').css('display', 'inline-flex').click(function(event){
-//   update()
-//   updateList($tweets);
-// updatingOrNot = false;
-// })
+$('#updaterbut').css('display', 'inline-flex').click(function(event){
+  update()
+  updateList($tweets);
+updatingOrNot = false;
+})
 
-//setTimeout method
-  setInterval(function(){
-    update();
-  }, 1000)
-  setInterval(function(){
-    updateList($tweets);
-  }, 2000)
+//setTimeout method. makes page refresh
+  // setInterval(function(){
+  //   update();
+  // }, 1000)
+  // setInterval(function(){
+  //   updateList($tweets);
+  // }, 2000)
 
 })
 

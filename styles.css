@@ -7,11 +7,13 @@
 }
 
 #logo {
+  cursor: pointer;
   margin-top: 20px;
   width: 100%;
   text-align: center;
   position:inherit;
-  background-color: #F9C74F;
+  background-color: #90BE6D;
+  color: rgb(245, 248, 250);
   border-radius: 25px;
   box-shadow: 7px 10px 1px #43AA8B;
 }
@@ -32,6 +34,7 @@
 }
 
 #header-username {
+  cursor:pointer;
   position: fixed;
   color:rgb(245, 248, 250);
   background-color: #F3722C;
@@ -40,6 +43,7 @@
   right: 0;
   margin-right: 20px;
   z-index: 1;
+  box-shadow: 7px 5px 1px #f94144;
 }
 
 #posttweetcon {
@@ -110,11 +114,10 @@
 
 
 .tweetcon{
-  padding: 0;
-  border: 2px solid #f94144;
+  border: 4px solid #F9C74F;
   background-color: #F9C74F;
   border-radius: 10px;
-  margin: 10px;
+  margin: 8px;
   box-shadow: 7px 10px 1px #43AA8B;
 }
 
@@ -126,13 +129,14 @@
 }
 
 .tweet-user {
+  cursor: pointer;
   padding: 5px;
   text-align: center;
   border: 2px solid #F9C74F;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
-  color: #F9C74F;
-  background-color: #577590;
+  color: rgb(245, 248, 250);
+  background-color: #90BE6D;
 }
 
 .tweet-timest {
@@ -150,3 +154,6 @@
   padding: 0;
 }
 
+.hashtag {
+  color: white;
+}
