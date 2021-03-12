@@ -11,6 +11,12 @@ const streams = {
     sharksforcheap: [],
     mracus: [],
     douglascalhoun: [],
+    roger: [],
+    partyman420: [],
+    soccer8320: [],
+    imreallytired: [],
+    randomusername: [],
+    thispersontweets: [],
   },
 };
 const users = Object.keys(streams.users);
