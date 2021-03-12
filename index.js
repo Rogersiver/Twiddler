@@ -1,4 +1,3 @@
-
 $(document).ready(() => {
   //init visitor
   visitor = null;
@@ -192,8 +191,8 @@ $(document).on("click", "#logo", (function(){
 //setTimeout method. updates the list every second and the list every 2. could probably happen faster
   setInterval(function(){
     update();
-  }, 1000)
+  }, 500)
   setInterval(function(){
     updateList($tweets);
-  }, 2000)
+  }, 1000)
 });
