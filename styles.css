@@ -10,7 +10,8 @@
   cursor: pointer;
   margin-top: 20px;
   width: 100%;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
   position:inherit;
   background-color: #90BE6D;
   color: rgb(245, 248, 250);
@@ -129,7 +130,7 @@
 .tweet-user {
   cursor: pointer;
   padding: 5px;
-  text-align: center;
+  text-align: left;
   border: 2px solid #F9C74F;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
