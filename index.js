@@ -7,7 +7,6 @@ $(document).ready(() => {
 //bring body into js as element
   const $body = $('body');
   //$body.html(''); weird init thing
-
   /*when the register button is clicked set visitor, make cosmetic changes,
   console registered! statement */
 $('#registerbut').click(function(){
@@ -50,7 +49,7 @@ $('#registerbut').click(function(){
 
 
 updateList($tweets);
-  
+
 //Update $tweets based on whosTimeline
 function update(){
   //if whosTimeline is the visitor

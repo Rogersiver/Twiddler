@@ -72,7 +72,6 @@ const writeTweet = (message) => {
   if (!visitor){
     throw new Error('Set the global visitor property!');
   }
-
   const tweet = {
     user: visitor,
     message: message,
