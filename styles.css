@@ -26,8 +26,6 @@
   pointer-events: none;
 }
 
-
-
 #name-input{
   background-color: #F9C74F;
   box-shadow: 7px 5px 1px #f3722c;
@@ -155,5 +153,10 @@
 }
 
 .hashtag {
-  color: white;
+  cursor: pointer;
+  color: #43AA8B;
+  
+}
+.hashtag:hover {
+  color: #e5ffd0;
 }
