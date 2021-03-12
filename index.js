@@ -20,7 +20,7 @@ $('#registerbut').click(function(){
  .css('-webkit-user-select', 'auto')
  .css('pointer-events', 'auto')
  $body.css('filter', 'greyscale(0%)') .css('transition', '1s')
- $('#main-overlay').fadeOut(2000);
+ $('#main-overlay').fadeOut(1000);
  streams.users[$visitor] = [];
  console.log(`You're Registered! your username is ${visitor}`)
 })
