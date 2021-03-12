@@ -50,11 +50,11 @@ const generateRandomTweet = () => {
   const tweet = {
     user: randomElement(users),
     message: randomMessage(),
-    created_at: moment()
+    created_at: moment(),
   };
+  tweet.hashtags = tweet.message.match(/#[a-z]+/gi);
   addTweet(tweet);
 };
-
 for (let i = 0; i < 10; i++) {
   generateRandomTweet();
 }
@@ -78,5 +78,7 @@ const writeTweet = (message) => {
     message: message,
     created_at: moment()
   };
+  tweet.hashtags = tweet.message.match(/#[a-z]+/gi);
+  console.log(tweet);
   addTweet(tweet);
 };
