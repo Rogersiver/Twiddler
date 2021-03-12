@@ -21,7 +21,7 @@
 
 #logo:hover {
   color: #fbdc93;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 #underneath-overlay-container {
@@ -70,7 +70,7 @@
 
 #tweeterbut:hover {
   color: #fbdc93;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 #registerbut {
@@ -86,7 +86,7 @@
 
 #registerbut:hover {
   color: #fbdc93;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 #updaterbut {
@@ -154,7 +154,7 @@
 
 .tweet-user:hover {
   color: #ffdf95;
-  transition: 1s;
+  transition: 0.5s;
 }
 .tweet-timest {
   font-size: x-small;
@@ -177,5 +177,5 @@
 }
 .hashtag:hover {
   color: #e5ffd0;
-  transition: 1s;
+  transition: 0.5s;
 }
