@@ -19,7 +19,7 @@ $(document).ready(() => {
       .text(`${tweet.message}`);
 
     const $timestamp = $('<p></p>')
-    .attr('class', 'tweet-timest').text(`${tweet.created_at}`);
+    .attr('class', 'tweet-timest').text(`${tweet.created_at.fromNow()}`);
 
     $tweet.append($user);
     $tweet.append($message);
