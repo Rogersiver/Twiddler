@@ -24,7 +24,12 @@
   transition: 0.5s;
 }
 
+.containerelement {
+  background-color: #577590;
+}
+
 #underneath-overlay-container {
+  background-color: #577590;
   max-width: 500px;
   filter: blur(20px) grayscale(100%);
   margin:auto;
@@ -98,6 +103,7 @@
 }
 
 #tweeterinput {
+  outline: none;
   width: 100%;
   border-radius: 10px;
   max-height: 100px;
@@ -159,7 +165,7 @@
 .tweet-timest {
   font-size: x-small;
   border-radius: 10px;
-  color: #43AA8B;
+  color: #577590;
   display: inline;
   padding: 10px;
   float: top;

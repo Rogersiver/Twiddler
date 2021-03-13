@@ -6,6 +6,8 @@ $(document).ready(() => {
 //bring body into js as element
   const $body = $('body');
 
+  $body.css('background-color', '#577590')
+
   //init tweetCreator function
  function createTweet(tweet){
     const $tweet = $('<div></div>').attr('class', 'tweetcon');
