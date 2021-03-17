@@ -5,8 +5,22 @@ $(document).ready(() => {
   var whosTimeline = 'none';
 //bring body into js as element
   const $body = $('body');
-
   $body.css('background-color', '#577590')
+
+  function colorUser(){
+    if(whosTimeline === 'none'){
+      $(".tweet-user").css("background-color", "#90BE6D")
+    }
+    if(whosTimeline === visitor){
+      $(".tweet-user").css("background-color", "#f3722c")
+    }
+    if(whosTimeline.startsWith('#')){
+      $(".tweet-user").css("background-color", "#577590")
+    }
+    if(whosTimeline !== 'none' && whosTimeline !== visitor && !whosTimeline.startsWith('#')){
+      $(".tweet-user").css("background-color", "#f94144")
+    }
+  }
 
   //init tweetCreator function
  function createTweet(tweet){
@@ -19,6 +33,7 @@ $(document).ready(() => {
     const $message = $('<p></p>')
       .attr('class', "tweet-message")
       .text(`${tweet.message}`);
+
 
     const $timestamp = $('<p></p>')
     .attr('class', 'tweet-timest').text(`${tweet.created_at.fromNow()}`);
@@ -107,7 +122,9 @@ if(whosTimeline === 'none'){
     //separates out the hashtags so we can select and style them
     $("p:contains('#')").html(function(_, html) {
       return html.replace(/(#[a-z][^\s]+)/g, '<span class="hashtag">$1</span>');
-   });
+    });
+    
+    colorUser();
   }
 
   /*when the register button is clicked set visitor, make cosmetic changes,
@@ -160,7 +177,6 @@ $(document).on("click", ".tweet-user", (function(){
   //slices the @ and : off of the user so it matches streams dat  a
   whosTimeline = $(this).html().slice(1).slice(0, -1);
   updateList($tweets);
-
 }))
 
 //when this hashtag is clicked...
@@ -191,10 +207,13 @@ $(document).on("click", "#logo", (function(){
 // })
 
 //setTimeout method. updates the list every second and the list every 2. could probably happen faster
+
   setInterval(function(){
     update();
   }, 500)
   setInterval(function(){
     updateList($tweets);
   }, 1000)
+
+
 });
